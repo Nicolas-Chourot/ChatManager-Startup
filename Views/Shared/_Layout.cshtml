@@ -18,8 +18,8 @@
             @Helper.ImageLink("Home", "About", "/info-icon.png", "menu-Images", "A propos...")
             @if (currentUser != null)
             {
-                @Helper.ImageLink("Friendships", "Index", "/friendships.png", "menu-Images", "Gestion des amitiés...")
                 @Helper.ImageLink("Chat", "Index", "/favicon.png", "menu-Images", "Salle de clavardage...")
+                @Helper.ImageLink("Friendships", "Index", "/friendships.png", "menu-Images", "Gestion des amitiés...")
                 if (currentUser.IsAdmin)
                 {
                     @Helper.IconCmd("Accounts", "UserList", "menu-Icon fa fa-users", "Gestion des usagers...")
