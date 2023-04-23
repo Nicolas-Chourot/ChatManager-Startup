@@ -15,7 +15,6 @@
     @Scripts.Render("~/bundles/NotificationsHandler")
 
     <script defer>
-        PartialRefresh.setEndSessionAction("@Url.Action("End","Session")");
         let pr = new PartialRefresh("@Url.Action("GetLoginsList")", "LoginsListContainer", 5);
     </script>
 }

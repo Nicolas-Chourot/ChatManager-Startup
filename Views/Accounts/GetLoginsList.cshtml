@@ -7,7 +7,7 @@
     {
         if (login.LoginDate.Day != currentDay)
         {
-            currentDay = login.LoginDate.Day; ///  /DeleteJournalDay?day=2022-03-24 DateTime dayToDelete = DateTime.Parse(day)
+            currentDay = login.LoginDate.Day;
             object param = new { day = login.LoginDate.ToShortDateString().Trim() };
             <hr />
             <div style="display:grid; grid-template-columns:80px 30px; align-items:center">
@@ -23,7 +23,6 @@
             <div>
                 @login.LoginDate.ToShortTimeString()
             </div>
-
             @if (login.LoginDate != login.LogoutDate)
             {
                 <div>&nbsp;:&nbsp;@login.LogoutDate.ToShortTimeString()</div>
@@ -43,7 +42,6 @@
 
             @if (login.IpAddress != "::1" && login.CountryCode != null)
             {
-               
                 <div>
                     <span>@login.City, @login.RegionName </span> @Helper.CountryFlag(login.CountryCode.ToLower())
                 </div>
@@ -52,7 +50,6 @@
                 {
                     <div>&nbsp;</div>
                 }
-
         </div>
     }
 }
