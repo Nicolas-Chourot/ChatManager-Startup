@@ -141,7 +141,7 @@ namespace ChatManager.Controllers
                 if (unverifiedEmail != null)
                 {
                     string verificationUrl = Url.Action("VerifyUser", "Accounts", null, Request.Url.Scheme);
-                    String Link = @"<br/><a href='" + verificationUrl + "?userid=" + user.Id + "&code=" + unverifiedEmail.VerificationCode + @"' > Confirmez votre adresse...</a>";
+                    String Link = @"<br/><a href='" + verificationUrl + "?code=" + unverifiedEmail.VerificationCode + @"' > Confirmez votre adresse...</a>";
 
                     string Subject = "ChatManager - Vérification de courriel...";
 
