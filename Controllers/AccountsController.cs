@@ -304,6 +304,10 @@ namespace ChatManager.Controllers
         [ValidateAntiForgeryToken()]
         public ActionResult Login(LoginCredential loginCredential)
         {
+            DateTime serverDate = DateTime.Now;
+            int serverTimeZoneOffset = serverDate.Hour - serverDate.ToUniversalTime().Hour;
+            Session["TimeZoneOffset"] = -(loginCredential.TimeZoneOffset + serverTimeZoneOffset);
+
             if (ModelState.IsValid)
             {
                 if (DB.Users.EmailBlocked(loginCredential.Email))
