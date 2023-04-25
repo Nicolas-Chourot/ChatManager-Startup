@@ -352,7 +352,13 @@
                     }
                     else
                     {
-                        <a href="@token" target="_blank">@token</a>
+                        string[] tt = token.Split('/');
+                        string sublink = token;
+                        if (tt.Length > 2)
+                        {
+                            sublink = tt[0] + @"//" + tt[2] + "...";
+                        }
+                        <a href="@token" target="_blank" class="ellipsis">@sublink</a>
                     }
                 }
             }
